@@ -6,7 +6,7 @@ shinyServer(function(input, output) {
   })
   
   output$Plot <- renderPlot({
-    dt1 <- data.frame(Assay=c('Test'), CV=c(input$Y), Bias=c(input$X))
+    dt1 <- data.frame(Assay=c('input$T'), CV=c(input$Y), Bias=c(input$X))
     c <- data.frame(x=c(input$Z,0), y=c(0,input$Z))
     ggplot(dt1, aes(x=CV, y=Bias)) + 
       geom_point(size=4, aes(shape=Assay)) +
